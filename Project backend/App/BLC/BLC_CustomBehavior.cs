@@ -391,12 +391,12 @@ namespace BLC
             paramsGetContacts.OWNER_ID = 1;
             listOfContacts = Get_Contact_By_OWNER_ID(paramsGetContacts);
 
-            if (listOfContacts.Count > 0)
+           if (listOfContacts.Count > 0)
             {
                 listOfContacts.ForEach(contact =>
                 {
                     var msg = new MimeMessage();
-                    msg.From.Add(new MailboxAddress(i_Params_SendEmailForSubscriptions.Title , "anthonymoussallem00@gmail.com"));
+                    msg.From.Add(new MailboxAddress(i_Params_SendEmailForSubscriptions.Title , "azuresoftsolutionstrial@gmail.com"));
 
                     msg.To.Add(new MailboxAddress("User", contact.EMAIL));
                     msg.Subject = i_Params_SendEmailForSubscriptions.Header;
@@ -414,14 +414,13 @@ namespace BLC
                     {
                         client.CheckCertificateRevocation = false;
                         client.Connect("smtp.gmail.com", 587, false);
-                        client.Authenticate("anthonymoussallem00@gmail.com", "Anthony@Gmail");
+                        client.Authenticate("azuresoftsolutionstrial@gmail.com", "Azuresoftsolutions@Gmail");
                         client.Send(msg);
                         client.Disconnect(true);
                     }
 
                 });
             }
-
         }
         #endregion
     }
