@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="centrelize">
+    <div class=" card">
+        <div class=" card-header">
+            <h5 class=" title">Login !</h5>
+        </div>
+        <div class=" card-body">
+            <form #f="ngForm">
+                
+                  <div class=" col-md-12 px-md-1">
+                    <div class=" form-group">
+                      <label> Username </label>
+                      <input class=" form-control"placeholder="Username" type="text"  name="USER_NAME" [(ngModel)]="paramsAuthenticate.USER_NAME" required />
+                    </div>
+                  </div>
+                  <div class=" col-md-12 px-md-1">
+                    <div class=" form-group">
+                      <label> Password </label>
+                      <input class=" form-control" placeholder="Password" type="password"  name="PASSWORD" [(ngModel)]="paramsAuthenticate.PASSWORD" required />
+                    </div>
+                  </div>
+                 
+               <div class="center-button">
+                <div class="row">
+                    <div class=" card-footer">
+                      <button [disabled]='!f.valid' class=" btn btn-fill btn-danger" type="submit" (click)='Login()'>Login</button>
+                    </div>
+                  </div>
+               </div>  
+                
+              </form>
+        </div>
+    </div>
+</div>
+</div>

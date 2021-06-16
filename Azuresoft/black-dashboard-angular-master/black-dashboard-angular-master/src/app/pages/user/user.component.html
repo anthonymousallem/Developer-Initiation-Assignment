@@ -1,0 +1,71 @@
+<div class=" content">
+  <div *ngFor='let entry of data'>
+    <div class=" row">
+      <div class=" col-md-8">
+        <div class=" card">
+          <div class=" card-header">
+            <h5 class=" title">Edit Profile</h5>
+          </div>
+          <div class=" card-body">
+            <form #f="ngForm">
+              <div class=" row">
+                <div class=" col-md-5 pr-md-1">
+                  <div class=" form-group">
+                    <label> Email </label>
+                    <input class=" form-control" placeholder="Email" type="text"  name="EMAIL" [(ngModel)]="entry.EMAIL" required />
+                  </div>
+                </div>
+                <div class=" col-md-3 px-md-1">
+                  <div class=" form-group">
+                    <label> Username </label>
+                    <input class=" form-control"placeholder="Username" type="text"  name="USERNAME" [(ngModel)]="entry.USERNAME" required />
+                  </div>
+                </div>
+               
+               
+              </div>
+              <div class="row">
+                <div class=" col-md-3 px-md-1">
+                  <div class=" form-group">
+                    <label> Password </label>
+                    <input class=" form-control" placeholder="Password" type="password" #pass  name="PASSWORD" (keyup)="0" [(ngModel)]="entry.PASSWORD" required />
+                  </div>
+                </div>
+                <div class=" col-md-3 px-md-1">
+                  <div class=" form-group">
+                    <label> Confirm Password </label>
+                    <input class=" form-control" placeholder="Password" type="password"  name="PASSWORD" #confirmPass (keyup)="0" required />
+                  </div>
+                </div>
+                
+              </div>
+              <div class=" col-md-12 px-md-1" *ngIf="pass.value != confirmPass.value">
+                <div class=" form-group">
+                  <h1> Passwords do not match </h1>
+                </div>
+              </div>
+              <div class="row">
+              <div class=" card-footer">
+                <button [disabled]='!f.valid || pass.value != confirmPass.value ' class=" btn btn-fill btn-danger" type="submit" (click)='Edit(entry)'>Save</button>
+              </div>
+              <div class=" card-footer">
+                <button [disabled]='!f.valid' class=" btn btn-fill btn-danger" type="submit" (click)='Delete(entry)'>Delete</button>
+              </div>
+            </div>
+            </form>
+          </div>
+          
+        </div>
+      </div>
+     
+
+    </div>
+  </div>
+  <div class=" fixed-plugin">
+    <div class=" show-dropdown" ngbDropdown>
+      <a (click)='AddEntry()'>
+        <i class=" fa fa-plus fa-2x"> </i>
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<div class=" content">
+      <div class=" row">
+        <div class=" col-md-8">
+          <div class=" card">
+            <div class=" card-header">
+              <h5 class=" title">Send Email</h5>
+            </div>
+            <div class=" card-body">
+              <form #f="ngForm">
+                <div class=" row">
+                  <div class=" col-md-5 pr-md-1">
+                    <div class=" form-group">
+                      <label> Title </label>
+                      <input class=" form-control" placeholder="Title" type="text"  name="Title" [(ngModel)]="paramsSendEmail.Title" required />
+                    </div>
+                  </div>
+                  <div class=" col-md-3 px-md-1">
+                    <div class=" form-group">
+                      <label> Header </label>
+                      <input class=" form-control"placeholder="Header" type="text"  name="Header" [(ngModel)]="paramsSendEmail.Header" required />
+                    </div>
+                  </div>
+                  <div class=" col-md-3 px-md-1">
+                    <div class=" form-group">
+                      <label> Body </label>
+                      <textarea class=" form-control" placeholder="Body" type="text"  name="Body" [(ngModel)]="paramsSendEmail.Body" required ></textarea>
+                    </div>
+                  </div>
+                 
+                </div>
+                <div class="row">
+                <div class=" card-footer">
+                  <button [disabled]='!f.valid' class=" btn btn-fill btn-danger" type="submit" (click)='SendEmail()'>Send</button>
+                </div>
+              </div>
+              </form>
+            </div>
+            
+          </div>
+        </div>
+       
+  
+      </div>
+    
+  </div>
